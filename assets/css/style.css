@@ -438,6 +438,10 @@ h1, h2, h3 { line-height: 1.25; letter-spacing: -0.02em; margin: 0; }
   align-items: start;
 }
 
+/* While a write-up is open the grid becomes a single column — see the comment
+   in main.js: a full-row card in a 3-up grid orphans its neighbours. */
+.cases.is-reading { grid-template-columns: 1fr; }
+
 .case {
   position: relative;
   display: flex;

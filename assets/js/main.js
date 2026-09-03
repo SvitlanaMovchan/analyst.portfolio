@@ -117,22 +117,47 @@
 
     article.appendChild(body);
 
-    toggle.addEventListener("click", function () {
-      var isOpen = article.classList.toggle("is-open");
+    function setOpen(isOpen) {
+      article.classList.toggle("is-open", isOpen);
       body.hidden = !isOpen;
       toggle.setAttribute("aria-expanded", String(isOpen));
       actionText.textContent = isOpen ? "Hide the write-up" : "Read the write-up";
-    });
+    }
 
-    return article;
+    return {
+      article: article,
+      toggle: toggle,
+      setOpen: setOpen,
+      isOpen: function () { return article.classList.contains("is-open"); }
+    };
   }
 
   function renderCases() {
     var grid = document.getElementById("cases-grid");
     if (!grid || typeof CASES === "undefined") return;
 
-    CASES.forEach(function (data, i) {
-      grid.appendChild(buildCase(data, i));
+    var cards = CASES.map(function (data, i) {
+      var card = buildCase(data, i);
+      grid.appendChild(card.article);
+      return card;
+    });
+
+    cards.forEach(function (card) {
+      card.toggle.addEventListener("click", function () {
+        var opening = !card.isOpen();
+
+        /* One at a time. With five cases, several open at once turns the
+           section into a wall of text and makes the page jump on every click. */
+        cards.forEach(function (other) {
+          if (other !== card) other.setOpen(false);
+        });
+        card.setOpen(opening);
+
+        /* An open card spans the full row, which in a 3-up grid strands the
+           cards beside it in a half-empty row. Drop the whole grid to one
+           column while reading, so nothing is left orphaned. */
+        grid.classList.toggle("is-reading", opening);
+      });
     });
   }
 
