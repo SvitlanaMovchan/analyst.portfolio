@@ -8,8 +8,8 @@ MUTED = (100, 116, 139)
 ACCENT = (37, 99, 235)
 
 NAME = "Svitlana Movchan"
-ROLE = "Data Analyst"
-SKILLS = "SQL  ·  Python  ·  Power BI  ·  Tableau  ·  GA4"
+ROLE = "Junior Data Analyst"
+SKILLS = "SQL  ·  Python  ·  Power BI  ·  BigQuery  ·  Excel"
 
 FONTS = {
     "bold": "/System/Library/Fonts/Supplemental/Arial Bold.ttf",

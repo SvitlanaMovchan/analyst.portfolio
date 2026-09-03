@@ -30,7 +30,7 @@ const CASES = [
     id: "01",
     title: "Cohort retention analysis",
     summary: "Which signup cohorts actually stick around, and where the drop-off starts.",
-    stack: ["SQL", "BigQuery", "Looker Studio"],
+    stack: ["SQL", "BigQuery", "Power BI"],
     metric: "D30 retention +12%",
     context:
       "Twelve months of user signup and activity events from a subscription product. " +
@@ -56,7 +56,7 @@ const CASES = [
     id: "02",
     title: "A/B test evaluation",
     summary: "Was the checkout redesign a real improvement, or noise in the data?",
-    stack: ["Python", "pandas", "SciPy"],
+    stack: ["Python", "pandas", "Matplotlib"],
     metric: "+3.4pp conversion, p = 0.02",
     context:
       "A two-week experiment on a redesigned checkout page, split evenly between control " +
@@ -80,9 +80,9 @@ const CASES = [
 
   {
     id: "03",
-    title: "Checkout funnel diagnostics",
+    title: "Sales funnel diagnostics",
     summary: "Where users abandon the purchase flow, and what that costs per month.",
-    stack: ["SQL", "GA4", "Power BI"],
+    stack: ["SQL", "Excel", "Power BI"],
     metric: "41% drop at payment step",
     context:
       "An e-commerce funnel with five steps from product page to order confirmation. " +

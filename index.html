@@ -4,16 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- EDIT: name + title appear in the browser tab and in Google search results -->
-<title>Svitlana Movchan — Data Analyst</title>
-<meta name="description" content="Data analyst portfolio: SQL, Python and BI case studies from the Genesis bootcamp and DAN.IT courses, with full write-ups of each solution.">
+<title>Svitlana Movchan — Junior Data Analyst</title>
+<meta name="description" content="Junior data analyst in Kyiv with a background in airline pricing and revenue analytics. SQL, Python and Power BI case studies from Genesis Academy and DAN.IT, with the full write-up of each solution.">
 <link rel="canonical" href="https://svitlanamovchan.github.io/analyst.portfolio/">
 <meta name="theme-color" content="#2563eb">
 
 <!-- Link preview card for LinkedIn, Telegram, Slack. og:image must be an absolute URL. -->
 <meta property="og:type" content="profile">
-<meta property="og:title" content="Svitlana Movchan — Data Analyst">
-<meta property="og:description" content="SQL, Python and BI case studies with full write-ups of each solution.">
+<meta property="og:title" content="Svitlana Movchan — Junior Data Analyst">
+<meta property="og:description" content="Airline pricing and revenue analytics background, now working in SQL, Python and Power BI. Case studies with full write-ups.">
 <meta property="og:url" content="https://svitlanamovchan.github.io/analyst.portfolio/">
 <meta property="og:image" content="https://svitlanamovchan.github.io/analyst.portfolio/assets/img/og-cover.png">
 <meta property="og:image:width" content="1200">
@@ -31,10 +30,21 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Svitlana Movchan",
-  "jobTitle": "Data Analyst",
+  "jobTitle": "Junior Data Analyst",
   "url": "https://svitlanamovchan.github.io/analyst.portfolio/",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kyiv",
+    "addressCountry": "UA"
+  },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "National Aviation University" },
+    { "@type": "EducationalOrganization", "name": "Genesis Academy" },
+    { "@type": "EducationalOrganization", "name": "DAN.IT Education" }
+  ],
+  "knowsLanguage": ["uk", "en"],
   "sameAs": [
-    "https://www.linkedin.com/in/YOUR-LINKEDIN/",
+    "https://www.linkedin.com/in/svitlana-movchan-3b6ab0197/",
     "https://github.com/SvitlanaMovchan"
   ]
 }
@@ -50,6 +60,7 @@
     <nav class="nav__links" aria-label="Sections">
       <a href="#cases">Cases</a>
       <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -67,35 +78,39 @@
     <div class="hero__text">
       <p class="hero__status"><span class="dot"></span>Open to Data Analyst roles</p>
       <h1 class="hero__name">Svitlana Movchan</h1>
-      <p class="hero__role">Data Analyst</p>
+      <p class="hero__role">Junior Data Analyst</p>
 
       <div class="hero__bio">
         <p>
-          I turn raw product and marketing data into decisions a team can act on —
-          cohort retention, A/B tests and funnel diagnostics, delivered as clear dashboards.
+          I turn business questions into decisions backed by data — pricing, demand and
+          profitability analysis, delivered as SQL queries and Power BI dashboards.
         </p>
         <p>
-          I moved into analytics after a background in <em>[your previous field]</em>, and trained
-          at the Genesis data analytics bootcamp and DAN.IT. My work usually starts with a vague
-          business question and ends with a number someone can act on.
+          I spent five years in aviation and travel, most recently as Pricing Manager at
+          Ukraine International Airlines, analysing market share, demand trends and route
+          profitability to set pricing strategy. I then completed the Data Analyst course at
+          DAN.IT and Analytics Camp 3.0 at Genesis Academy, adding SQL, Python and Power BI
+          to that commercial background.
         </p>
       </div>
 
       <p class="hero__meta">
-        <em>[City, Country]</em> · Open to remote or hybrid
+        <em>Kyiv, Ukraine</em> · Open to remote or hybrid · Ukrainian (native), English&nbsp;B1
+      </p>
+      <p class="hero__note">
+        I work with a stable internet connection and backup power, so outages do not affect my availability.
       </p>
 
       <ul class="chips" aria-label="Core skills">
         <li class="chip">SQL</li>
         <li class="chip">Python</li>
         <li class="chip">Power BI</li>
-        <li class="chip">Tableau</li>
-        <li class="chip">GA4</li>
+        <li class="chip">BigQuery</li>
+        <li class="chip">Excel</li>
       </ul>
       <div class="hero__actions">
         <a class="btn btn--primary" href="assets/cv/CV.pdf" download>Download CV (PDF)</a>
-        <!-- EDIT: replace with your real LinkedIn URL -->
-        <a class="btn" href="https://www.linkedin.com/in/YOUR-LINKEDIN/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://www.linkedin.com/in/svitlana-movchan-3b6ab0197/" target="_blank" rel="noopener">LinkedIn</a>
         <a class="btn" data-email-link href="#contact">Email</a>
       </div>
     </div>
@@ -108,8 +123,9 @@
   <div class="wrap">
     <h2 class="section__title"><span class="section__num">01</span>Case Studies</h2>
     <p class="section__lead">
-      Test assignments from the Genesis bootcamp and DAN.IT. Each card opens the full write-up —
-      context, approach and result — and links to the complete solution document.
+      Test assignments from Analytics Camp 3.0 at Genesis Academy and the Data Analyst course
+      at DAN.IT. Each card opens the full write-up — context, approach and result — and links
+      to the complete solution document.
     </p>
 
     <div class="cases" id="cases-grid"></div>
@@ -118,9 +134,9 @@
          JavaScript disabled see, and what some crawlers read. -->
     <noscript>
       <ul class="cases-fallback">
-        <li>01 — Cohort retention analysis <span class="muted">(SQL, BigQuery, Looker Studio)</span></li>
-        <li>02 — A/B test evaluation <span class="muted">(Python, pandas, SciPy)</span></li>
-        <li>03 — Checkout funnel diagnostics <span class="muted">(SQL, GA4, Power BI)</span></li>
+        <li>01 — Cohort retention analysis <span class="muted">(SQL, BigQuery)</span></li>
+        <li>02 — A/B test evaluation <span class="muted">(Python, pandas)</span></li>
+        <li>03 — Sales funnel diagnostics <span class="muted">(SQL, Power BI)</span></li>
       </ul>
       <p>Full write-ups need JavaScript. The same cases are summarised in my <a href="assets/cv/CV.pdf">CV</a>.</p>
     </noscript>
@@ -135,42 +151,42 @@
     <div class="grid grid--4">
 
       <div class="card">
-        <h3 class="card__title">SQL &amp; Python</h3>
+        <h3 class="card__title">SQL</h3>
         <ul class="list">
-          <li>Window functions, CTEs, query optimisation</li>
-          <li>PostgreSQL, BigQuery</li>
+          <li>MySQL, BigQuery</li>
+          <li>JOINs, GROUP BY, HAVING</li>
+          <li>CTEs and subqueries</li>
+          <li>Window functions, CASE</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="card__title">Power BI</h3>
+        <ul class="list">
+          <li>DAX measures</li>
+          <li>Power Query</li>
+          <li>Data modeling</li>
+          <li>Dashboard design</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="card__title">Python</h3>
+        <ul class="list">
           <li>pandas, NumPy</li>
-          <li>matplotlib, seaborn</li>
+          <li>Matplotlib, Plotly</li>
+          <li>Data cleaning</li>
+          <li>Exploratory analysis</li>
         </ul>
       </div>
 
       <div class="card">
-        <h3 class="card__title">BI &amp; Visualization</h3>
+        <h3 class="card__title">Excel &amp; Sheets</h3>
         <ul class="list">
-          <li>Power BI (DAX, data model)</li>
-          <li>Tableau</li>
-          <li>Looker Studio</li>
-          <li>Dashboard design for non-analysts</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3 class="card__title">Analytics methods</h3>
-        <ul class="list">
-          <li>A/B testing, significance &amp; power</li>
-          <li>Cohort and retention analysis</li>
-          <li>Funnel and drop-off analysis</li>
-          <li>Unit economics, LTV, CAC</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3 class="card__title">Tools</h3>
-        <ul class="list">
-          <li>Excel / Google Sheets (advanced)</li>
-          <li>Google Analytics 4</li>
-          <li>Git &amp; GitHub</li>
-          <li>Jupyter, Google Colab</li>
+          <li>Pivot tables</li>
+          <li>VLOOKUP / XLOOKUP</li>
+          <li>Advanced formulas</li>
+          <li>Google Sheets</li>
         </ul>
       </div>
 
@@ -178,23 +194,78 @@
   </div>
 </section>
 
-<!-- ============ EDUCATION ============ -->
-<!-- EDIT: exact programme names, dates, and what you actually built there -->
-<section class="section section--alt" id="education">
+<!-- ============ EXPERIENCE ============ -->
+<section class="section section--alt" id="experience">
   <div class="wrap">
-    <h2 class="section__title"><span class="section__num">03</span>Education</h2>
+    <h2 class="section__title"><span class="section__num">03</span>Experience</h2>
+    <p class="section__lead">
+      Five years in commercial roles where the work was already analytical — pricing, demand
+      and revenue — before I moved into analytics full time.
+    </p>
 
     <ol class="timeline">
       <li class="timeline__item">
         <div class="timeline__meta">
-          <span class="timeline__date">2025</span>
+          <span class="timeline__date">Oct 2019 —<br>Sep 2021</span>
         </div>
         <div class="timeline__body">
-          <h3 class="timeline__title">Data Analytics Bootcamp — Genesis</h3>
+          <h3 class="timeline__title">Pricing Manager — Ukraine International Airlines</h3>
+          <ul class="list">
+            <li>Developed, implemented and monitored pricing strategies across the market to optimise revenue performance</li>
+            <li>Ran market analysis — market share, demand trends and the competitive landscape — to support pricing decisions</li>
+            <li>Analysed route profitability and identified opportunities to improve revenue and margins</li>
+            <li>Worked with sales, revenue management and operations to implement pricing changes and evaluate their impact</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="timeline__item">
+        <div class="timeline__meta">
+          <span class="timeline__date">Nov 2017 —<br>Sep 2019</span>
+        </div>
+        <div class="timeline__body">
+          <h3 class="timeline__title">Corporate Travel Agent — Kiy Avia</h3>
+          <ul class="list">
+            <li>Full-cycle corporate travel services for business clients, including employees of large IT companies such as GlobalLogic</li>
+            <li>Booked and issued air, rail and bus tickets, accommodation, transfers and additional services</li>
+            <li>Maintained accurate booking and financial data in the 1C system</li>
+            <li>Coordinated communication between clients, suppliers and the accounting department</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="timeline__item">
+        <div class="timeline__meta">
+          <span class="timeline__date">Sep 2016 —<br>Sep 2017</span>
+        </div>
+        <div class="timeline__body">
+          <h3 class="timeline__title">Customer Service Manager — Uklon</h3>
+          <ul class="list">
+            <li>Provided technical support to users, resolving system-related issues and inquiries</li>
+            <li>Monitored and processed customer ride orders, ensuring accuracy and timely handling</li>
+            <li>Resolved inquiries and conflicts between passengers and drivers</li>
+          </ul>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section class="section" id="education">
+  <div class="wrap">
+    <h2 class="section__title"><span class="section__num">04</span>Education</h2>
+
+    <ol class="timeline">
+      <li class="timeline__item">
+        <div class="timeline__meta">
+          <span class="timeline__date">Jun —<br>Aug 2026</span>
+        </div>
+        <div class="timeline__body">
+          <h3 class="timeline__title">Analytics Camp 3.0 — Genesis Academy</h3>
           <p>
-            Intensive programme built around real product data: SQL for analytics, statistics and
-            experiment design, cohort and retention modelling, dashboarding, and presenting findings
-            to stakeholders. The case studies above are the test assignments from this course.
+            Intensive analytics programme built around real product data. The case studies
+            above are the test assignments from this course.
           </p>
           <p class="timeline__cert">
             <a href="assets/img/certs/genesis.pdf" target="_blank" rel="noopener">View certificate →</a>
@@ -204,16 +275,29 @@
 
       <li class="timeline__item">
         <div class="timeline__meta">
-          <span class="timeline__date">2024</span>
+          <span class="timeline__date">Oct 2025 —<br>May 2026</span>
         </div>
         <div class="timeline__body">
-          <h3 class="timeline__title">DAN.IT Education</h3>
+          <h3 class="timeline__title">Data Analyst Course — DAN.IT Education</h3>
           <p>
-            Foundation courses covering programming fundamentals, working with data structures and APIs,
-            and version control — the technical base I now use daily for automating analysis.
+            Covered SQL, Excel, Power BI and Python — the technical base I now use for
+            querying, modelling and reporting.
           </p>
           <p class="timeline__cert">
             <a href="assets/img/certs/danit.pdf" target="_blank" rel="noopener">View certificate →</a>
+          </p>
+        </div>
+      </li>
+
+      <li class="timeline__item">
+        <div class="timeline__meta">
+          <span class="timeline__date">2012 —<br>2018</span>
+        </div>
+        <div class="timeline__body">
+          <h3 class="timeline__title">MSc, Air Transportation Management — National Aviation University</h3>
+          <p>
+            Master's degree, Transport Engineer. The commercial aviation grounding behind my
+            pricing and revenue work.
           </p>
         </div>
       </li>
@@ -222,18 +306,18 @@
 </section>
 
 <!-- ============ CONTACT ============ -->
-<!-- EDIT: replace the handles below. Email is assembled in JS to keep scrapers out. -->
-<section class="section" id="contact">
+<section class="section section--alt" id="contact">
   <div class="wrap">
-    <h2 class="section__title"><span class="section__num">04</span>Contact</h2>
+    <h2 class="section__title"><span class="section__num">05</span>Contact</h2>
     <p class="section__lead">
       Happy to talk about analyst roles, or to walk through any of the cases above in more detail.
     </p>
     <ul class="contacts">
       <li><span class="contacts__label">Email</span><a data-email-link href="#">loading…</a></li>
-      <li><span class="contacts__label">LinkedIn</span><a href="https://www.linkedin.com/in/YOUR-LINKEDIN/" target="_blank" rel="noopener">linkedin.com/in/YOUR-LINKEDIN</a></li>
-      <li><span class="contacts__label">Telegram</span><a href="https://t.me/YOUR_TELEGRAM" target="_blank" rel="noopener">@YOUR_TELEGRAM</a></li>
+      <li><span class="contacts__label">LinkedIn</span><a href="https://www.linkedin.com/in/svitlana-movchan-3b6ab0197/" target="_blank" rel="noopener">svitlana-movchan</a></li>
+      <li><span class="contacts__label">Telegram</span><a href="https://t.me/Svitlana_Movchan" target="_blank" rel="noopener">@Svitlana_Movchan</a></li>
       <li><span class="contacts__label">GitHub</span><a href="https://github.com/SvitlanaMovchan" target="_blank" rel="noopener">github.com/SvitlanaMovchan</a></li>
+      <li><span class="contacts__label">Location</span><span>Kyiv, Ukraine</span></li>
     </ul>
   </div>
 </section>

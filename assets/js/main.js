@@ -11,7 +11,7 @@
      don't pick it up. The page reassembles it at load time.
      For hello@example.com you would write: user "hello", domain "example.com"
      ------------------------------------------------------------------------ */
-  var EMAIL_PARTS = { user: "your.name", domain: "gmail.com" };
+  var EMAIL_PARTS = { user: "svitlana.piven2311", domain: "gmail.com" };
 
   /* ---------------------------------------------------------------- helpers */
 

@@ -162,7 +162,9 @@ h1, h2, h3 { line-height: 1.25; letter-spacing: -0.02em; margin: 0; }
 @media (max-width: 480px) {
   .nav__brand { display: none; }
   .nav__inner { justify-content: center; }
-  .nav__links { flex-wrap: nowrap; }
+  .nav__links { flex-wrap: nowrap; gap: 0; }
+  /* Five labels have to fit the content box at 375px without eating the gutter. */
+  .nav__links a { padding: 8px 5px; font-size: 12px; }
 }
 
 /* ==========================================================================
@@ -246,7 +248,17 @@ h1, h2, h3 { line-height: 1.25; letter-spacing: -0.02em; margin: 0; }
   font-family: var(--font-mono);
   font-size: 13.5px;
   color: var(--text-muted);
-  margin: 18px 0 24px;
+  margin: 18px 0 8px;
+}
+
+/* Reassurance for remote employers hiring from Ukraine — quieter than the rest. */
+.hero__note {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  max-width: 62ch;
+  margin: 0 0 24px;
+  padding-left: 12px;
+  border-left: 2px solid var(--border);
 }
 
 .hero__meta em {
@@ -618,11 +630,13 @@ h1, h2, h3 { line-height: 1.25; letter-spacing: -0.02em; margin: 0; }
   border-top: 1px solid var(--border);
 }
 
-.timeline__meta { flex-shrink: 0; min-width: 72px; }
+/* Wide enough for a two-line "Oct 2019 — Sep 2021" range without wrapping oddly. */
+.timeline__meta { flex-shrink: 0; min-width: 104px; }
 
 .timeline__date {
   font-family: var(--font-mono);
-  font-size: 14px;
+  font-size: 13px;
+  line-height: 1.5;
   color: var(--accent);
 }
 
@@ -640,6 +654,9 @@ h1, h2, h3 { line-height: 1.25; letter-spacing: -0.02em; margin: 0; }
   font-size: 15px;
   max-width: 68ch;
 }
+
+.timeline__body .list { max-width: 74ch; font-size: 15px; }
+.timeline__body .list li { margin-bottom: 6px; }
 
 .timeline__cert { font-size: 14px; }
 
