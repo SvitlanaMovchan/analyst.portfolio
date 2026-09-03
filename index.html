@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- EDIT: name + title appear in the browser tab and in Google search results -->
+<title>Svitlana Movchan — Data Analyst</title>
+<meta name="description" content="Data analyst portfolio: SQL, Python and BI case studies from the Genesis bootcamp and DAN.IT courses, with full write-ups of each solution.">
+<link rel="canonical" href="https://svitlanamovchan.github.io/analyst.portfolio/">
+<meta name="theme-color" content="#2563eb">
+
+<!-- Link preview card for LinkedIn, Telegram, Slack. og:image must be an absolute URL. -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Svitlana Movchan — Data Analyst">
+<meta property="og:description" content="SQL, Python and BI case studies with full write-ups of each solution.">
+<meta property="og:url" content="https://svitlanamovchan.github.io/analyst.portfolio/">
+<meta property="og:image" content="https://svitlanamovchan.github.io/analyst.portfolio/assets/img/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Svitlana Movchan",
+  "jobTitle": "Data Analyst",
+  "url": "https://svitlanamovchan.github.io/analyst.portfolio/",
+  "sameAs": [
+    "https://www.linkedin.com/in/YOUR-LINKEDIN/",
+    "https://github.com/SvitlanaMovchan"
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav__inner">
+    <a class="nav__brand" href="#top">Svitlana&nbsp;Movchan</a>
+    <nav class="nav__links" aria-label="Sections">
+      <a href="#cases">Cases</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<!-- EDIT: photo, name, role, one-line positioning, skill chips -->
+<section class="hero" id="top">
+  <div class="wrap hero__inner">
+    <!-- EDIT: drop your photo in as assets/img/photo.jpg and change the src below -->
+    <img class="hero__photo" src="assets/img/photo-placeholder.svg" alt="Portrait of Svitlana Movchan" width="128" height="128">
+    <div class="hero__text">
+      <p class="hero__status"><span class="dot"></span>Open to Data Analyst roles</p>
+      <h1 class="hero__name">Svitlana Movchan</h1>
+      <p class="hero__role">Data Analyst</p>
+      <p class="hero__pitch">
+        I turn raw product and marketing data into decisions a team can act on —
+        cohort retention, A/B tests and funnel diagnostics, delivered as clear dashboards.
+      </p>
+      <ul class="chips" aria-label="Core skills">
+        <li class="chip">SQL</li>
+        <li class="chip">Python</li>
+        <li class="chip">Power BI</li>
+        <li class="chip">Tableau</li>
+        <li class="chip">GA4</li>
+      </ul>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="assets/cv/CV.pdf" download>Download CV (PDF)</a>
+        <!-- EDIT: replace with your real LinkedIn URL -->
+        <a class="btn" href="https://www.linkedin.com/in/YOUR-LINKEDIN/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" data-email-link href="#contact">Email</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<!-- EDIT: 3-4 sentences — where you came from, what you do, what you're looking for -->
+<section class="section" id="about">
+  <div class="wrap">
+    <h2 class="section__title"><span class="section__num">01</span>About</h2>
+    <div class="prose">
+      <p>
+        I moved into analytics after a background in <em>[your previous field]</em>, and completed the
+        Genesis data analytics bootcamp along with front-end and data courses at DAN.IT.
+      </p>
+      <p>
+        My work usually starts with a vague business question and ends with a number someone can act on:
+        which cohort is leaking, whether a test result is real, where users drop out of the funnel.
+        I write the SQL, run the analysis in Python, and ship the result as a dashboard rather than a spreadsheet.
+      </p>
+      <p>
+        Based in <em>[City, Country]</em> · Available for remote or hybrid roles.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASE STUDIES ============ -->
+<!-- Cards are rendered by assets/js/main.js from assets/js/cases.js — edit the content there. -->
+<section class="section section--alt" id="cases">
+  <div class="wrap">
+    <h2 class="section__title"><span class="section__num">02</span>Case Studies</h2>
+    <p class="section__lead">
+      Test assignments from the Genesis bootcamp and DAN.IT. Each card opens the full write-up —
+      context, approach and result — and links to the complete solution document.
+    </p>
+
+    <div class="cases" id="cases-grid"></div>
+
+    <!-- EDIT: keep this list in sync with cases.js — it is what visitors with
+         JavaScript disabled see, and what some crawlers read. -->
+    <noscript>
+      <ul class="cases-fallback">
+        <li>01 — Cohort retention analysis <span class="muted">(SQL, BigQuery, Looker Studio)</span></li>
+        <li>02 — A/B test evaluation <span class="muted">(Python, pandas, SciPy)</span></li>
+        <li>03 — Checkout funnel diagnostics <span class="muted">(SQL, GA4, Power BI)</span></li>
+      </ul>
+      <p>Full write-ups need JavaScript. The same cases are summarised in my <a href="assets/cv/CV.pdf">CV</a>.</p>
+    </noscript>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<!-- EDIT: keep only what you can actually defend in an interview -->
+<section class="section" id="skills">
+  <div class="wrap">
+    <h2 class="section__title"><span class="section__num">03</span>Skills</h2>
+    <div class="grid grid--4">
+
+      <div class="card">
+        <h3 class="card__title">SQL &amp; Python</h3>
+        <ul class="list">
+          <li>Window functions, CTEs, query optimisation</li>
+          <li>PostgreSQL, BigQuery</li>
+          <li>pandas, NumPy</li>
+          <li>matplotlib, seaborn</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="card__title">BI &amp; Visualization</h3>
+        <ul class="list">
+          <li>Power BI (DAX, data model)</li>
+          <li>Tableau</li>
+          <li>Looker Studio</li>
+          <li>Dashboard design for non-analysts</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="card__title">Analytics methods</h3>
+        <ul class="list">
+          <li>A/B testing, significance &amp; power</li>
+          <li>Cohort and retention analysis</li>
+          <li>Funnel and drop-off analysis</li>
+          <li>Unit economics, LTV, CAC</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="card__title">Tools</h3>
+        <ul class="list">
+          <li>Excel / Google Sheets (advanced)</li>
+          <li>Google Analytics 4</li>
+          <li>Git &amp; GitHub</li>
+          <li>Jupyter, Google Colab</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<!-- EDIT: exact programme names, dates, and what you actually built there -->
+<section class="section section--alt" id="education">
+  <div class="wrap">
+    <h2 class="section__title"><span class="section__num">04</span>Education</h2>
+
+    <ol class="timeline">
+      <li class="timeline__item">
+        <div class="timeline__meta">
+          <span class="timeline__date">2025</span>
+        </div>
+        <div class="timeline__body">
+          <h3 class="timeline__title">Data Analytics Bootcamp — Genesis</h3>
+          <p>
+            Intensive programme built around real product data: SQL for analytics, statistics and
+            experiment design, cohort and retention modelling, dashboarding, and presenting findings
+            to stakeholders. The case studies above are the test assignments from this course.
+          </p>
+          <p class="timeline__cert">
+            <a href="assets/img/certs/genesis.pdf" target="_blank" rel="noopener">View certificate →</a>
+          </p>
+        </div>
+      </li>
+
+      <li class="timeline__item">
+        <div class="timeline__meta">
+          <span class="timeline__date">2024</span>
+        </div>
+        <div class="timeline__body">
+          <h3 class="timeline__title">DAN.IT Education</h3>
+          <p>
+            Foundation courses covering programming fundamentals, working with data structures and APIs,
+            and version control — the technical base I now use daily for automating analysis.
+          </p>
+          <p class="timeline__cert">
+            <a href="assets/img/certs/danit.pdf" target="_blank" rel="noopener">View certificate →</a>
+          </p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<!-- EDIT: replace the handles below. Email is assembled in JS to keep scrapers out. -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <h2 class="section__title"><span class="section__num">05</span>Contact</h2>
+    <p class="section__lead">
+      Happy to talk about analyst roles, or to walk through any of the cases above in more detail.
+    </p>
+    <ul class="contacts">
+      <li><span class="contacts__label">Email</span><a data-email-link href="#">loading…</a></li>
+      <li><span class="contacts__label">LinkedIn</span><a href="https://www.linkedin.com/in/YOUR-LINKEDIN/" target="_blank" rel="noopener">linkedin.com/in/YOUR-LINKEDIN</a></li>
+      <li><span class="contacts__label">Telegram</span><a href="https://t.me/YOUR_TELEGRAM" target="_blank" rel="noopener">@YOUR_TELEGRAM</a></li>
+      <li><span class="contacts__label">GitHub</span><a href="https://github.com/SvitlanaMovchan" target="_blank" rel="noopener">github.com/SvitlanaMovchan</a></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <p>© <span id="year">2026</span> Svitlana Movchan</p>
+    <p class="footer__built">Built with plain HTML, CSS and JavaScript</p>
+  </div>
+</footer>
+
+<script src="assets/js/cases.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
