@@ -16,9 +16,12 @@ Live: **https://svitlanamovchan.github.io/analyst.portfolio/**
 Головне: у Google Doc з рішенням постав доступ
 **«Anyone with the link → Viewer»**, інакше рекрутер побачить екран запиту доступу.
 
-### Текст на сторінці (About, Skills, Education, контакти)
+### Текст на сторінці (біо в шапці, Skills, Education, контакти)
 
 У `index.html`, шукай коментарі `<!-- EDIT: ... -->`.
+
+Окремої секції About немає — коротке біо живе в шапці (`.hero__bio`), щоб
+рекрутер побачив увесь пітч без скролу.
 
 ### Email
 

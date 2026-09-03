@@ -59,19 +59,32 @@
 <main id="main">
 
 <!-- ============ HERO ============ -->
-<!-- EDIT: photo, name, role, one-line positioning, skill chips -->
+<!-- EDIT: photo, name, role, the short bio, location, skill chips -->
 <section class="hero" id="top">
   <div class="wrap hero__inner">
     <!-- EDIT: drop your photo in as assets/img/photo.jpg and change the src below -->
-    <img class="hero__photo" src="assets/img/photo-placeholder.svg" alt="Portrait of Svitlana Movchan" width="128" height="128">
+    <img class="hero__photo" src="assets/img/photo-placeholder.svg" alt="Portrait of Svitlana Movchan" width="144" height="144">
     <div class="hero__text">
       <p class="hero__status"><span class="dot"></span>Open to Data Analyst roles</p>
       <h1 class="hero__name">Svitlana Movchan</h1>
       <p class="hero__role">Data Analyst</p>
-      <p class="hero__pitch">
-        I turn raw product and marketing data into decisions a team can act on —
-        cohort retention, A/B tests and funnel diagnostics, delivered as clear dashboards.
+
+      <div class="hero__bio">
+        <p>
+          I turn raw product and marketing data into decisions a team can act on —
+          cohort retention, A/B tests and funnel diagnostics, delivered as clear dashboards.
+        </p>
+        <p>
+          I moved into analytics after a background in <em>[your previous field]</em>, and trained
+          at the Genesis data analytics bootcamp and DAN.IT. My work usually starts with a vague
+          business question and ends with a number someone can act on.
+        </p>
+      </div>
+
+      <p class="hero__meta">
+        <em>[City, Country]</em> · Open to remote or hybrid
       </p>
+
       <ul class="chips" aria-label="Core skills">
         <li class="chip">SQL</li>
         <li class="chip">Python</li>
@@ -89,33 +102,11 @@
   </div>
 </section>
 
-<!-- ============ ABOUT ============ -->
-<!-- EDIT: 3-4 sentences — where you came from, what you do, what you're looking for -->
-<section class="section" id="about">
-  <div class="wrap">
-    <h2 class="section__title"><span class="section__num">01</span>About</h2>
-    <div class="prose">
-      <p>
-        I moved into analytics after a background in <em>[your previous field]</em>, and completed the
-        Genesis data analytics bootcamp along with front-end and data courses at DAN.IT.
-      </p>
-      <p>
-        My work usually starts with a vague business question and ends with a number someone can act on:
-        which cohort is leaking, whether a test result is real, where users drop out of the funnel.
-        I write the SQL, run the analysis in Python, and ship the result as a dashboard rather than a spreadsheet.
-      </p>
-      <p>
-        Based in <em>[City, Country]</em> · Available for remote or hybrid roles.
-      </p>
-    </div>
-  </div>
-</section>
-
 <!-- ============ CASE STUDIES ============ -->
 <!-- Cards are rendered by assets/js/main.js from assets/js/cases.js — edit the content there. -->
 <section class="section section--alt" id="cases">
   <div class="wrap">
-    <h2 class="section__title"><span class="section__num">02</span>Case Studies</h2>
+    <h2 class="section__title"><span class="section__num">01</span>Case Studies</h2>
     <p class="section__lead">
       Test assignments from the Genesis bootcamp and DAN.IT. Each card opens the full write-up —
       context, approach and result — and links to the complete solution document.
@@ -140,7 +131,7 @@
 <!-- EDIT: keep only what you can actually defend in an interview -->
 <section class="section" id="skills">
   <div class="wrap">
-    <h2 class="section__title"><span class="section__num">03</span>Skills</h2>
+    <h2 class="section__title"><span class="section__num">02</span>Skills</h2>
     <div class="grid grid--4">
 
       <div class="card">
@@ -191,7 +182,7 @@
 <!-- EDIT: exact programme names, dates, and what you actually built there -->
 <section class="section section--alt" id="education">
   <div class="wrap">
-    <h2 class="section__title"><span class="section__num">04</span>Education</h2>
+    <h2 class="section__title"><span class="section__num">03</span>Education</h2>
 
     <ol class="timeline">
       <li class="timeline__item">
@@ -234,7 +225,7 @@
 <!-- EDIT: replace the handles below. Email is assembled in JS to keep scrapers out. -->
 <section class="section" id="contact">
   <div class="wrap">
-    <h2 class="section__title"><span class="section__num">05</span>Contact</h2>
+    <h2 class="section__title"><span class="section__num">04</span>Contact</h2>
     <p class="section__lead">
       Happy to talk about analyst roles, or to walk through any of the cases above in more detail.
     </p>

@@ -35,24 +35,27 @@
     var article = el("article", "case");
     var bodyId = "case-body-" + data.id;
 
-    /* --- clickable header ------------------------------------------------ */
-    var toggle = el("button", "case__toggle");
+    /* --- clickable header --------------------------------------------------
+       The button holds only the title, so the <h3> stays a real heading
+       (a heading inside a button is invalid HTML). CSS then stretches the
+       button's ::after over the whole header, making the card clickable
+       without swallowing the links inside the expanded body. */
+    var header = el("div", "case__header");
+
+    header.appendChild(el("span", "case__num", data.id));
+
+    var heading = el("h3", "case__title");
+    var toggle = el("button", "case__toggle", data.title);
     toggle.type = "button";
     toggle.setAttribute("aria-expanded", "false");
     toggle.setAttribute("aria-controls", bodyId);
+    heading.appendChild(toggle);
+    header.appendChild(heading);
 
-    var head = el("div", "case__head");
-    head.appendChild(el("span", "case__num", data.id));
-    var arrow = el("span", "case__arrow", "▾");
-    arrow.setAttribute("aria-hidden", "true");
-    head.appendChild(arrow);
-    toggle.appendChild(head);
-
-    toggle.appendChild(el("h3", "case__title", data.title));
-    toggle.appendChild(el("p", "case__summary", data.summary));
+    header.appendChild(el("p", "case__summary", data.summary));
 
     if (data.metric) {
-      toggle.appendChild(el("span", "case__metric", data.metric));
+      header.appendChild(el("span", "case__metric", data.metric));
     }
 
     if (data.stack && data.stack.length) {
@@ -60,10 +63,28 @@
       data.stack.forEach(function (tool) {
         chips.appendChild(el("li", "chip", tool));
       });
-      toggle.appendChild(chips);
+      header.appendChild(chips);
     }
 
-    article.appendChild(toggle);
+    /* The visible cue that the card opens. The button already announces its
+       state to screen readers, so this is decoration for sighted users. */
+    var action = el("span", "case__action");
+    action.setAttribute("aria-hidden", "true");
+    var actionText = el("span", "case__action-text", "Read the write-up");
+    action.appendChild(actionText);
+
+    /* An SVG chevron rather than a "▾" glyph — the character renders as a
+       hairline dot in several fonts. */
+    var arrow = el("span", "case__arrow");
+    arrow.innerHTML =
+      '<svg viewBox="0 0 16 16" width="14" height="14" fill="none" ' +
+      'stroke="currentColor" stroke-width="2" stroke-linecap="round" ' +
+      'stroke-linejoin="round"><path d="M4 6.5 8 10.5 12 6.5"/></svg>';
+    action.appendChild(arrow);
+
+    header.appendChild(action);
+
+    article.appendChild(header);
 
     /* --- expandable body ------------------------------------------------- */
     var body = el("div", "case__body");
@@ -100,6 +121,7 @@
       var isOpen = article.classList.toggle("is-open");
       body.hidden = !isOpen;
       toggle.setAttribute("aria-expanded", String(isOpen));
+      actionText.textContent = isOpen ? "Hide the write-up" : "Read the write-up";
     });
 
     return article;

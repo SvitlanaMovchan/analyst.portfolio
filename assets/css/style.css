@@ -157,6 +157,14 @@ h1, h2, h3 { line-height: 1.25; letter-spacing: -0.02em; margin: 0; }
   .nav__links a { padding: 8px; font-size: 13px; }
 }
 
+/* Below this the brand plus four links wrap into a ragged two-row nav. The name
+   is the first thing in the hero anyway, so drop it here and centre the links. */
+@media (max-width: 480px) {
+  .nav__brand { display: none; }
+  .nav__inner { justify-content: center; }
+  .nav__links { flex-wrap: nowrap; }
+}
+
 /* ==========================================================================
    Hero
    ========================================================================== */
@@ -173,8 +181,8 @@ h1, h2, h3 { line-height: 1.25; letter-spacing: -0.02em; margin: 0; }
 }
 
 .hero__photo {
-  width: 128px;
-  height: 128px;
+  width: 144px;
+  height: 144px;
   border-radius: 50%;
   object-fit: cover;
   border: 1px solid var(--border);
@@ -218,11 +226,39 @@ h1, h2, h3 { line-height: 1.25; letter-spacing: -0.02em; margin: 0; }
   margin: 0 0 20px;
 }
 
-.hero__pitch {
-  font-size: clamp(16px, 2vw, 18px);
+/* The bio lives here rather than in its own About section: a recruiter arriving
+   from LinkedIn should get the whole pitch without scrolling. */
+.hero__bio { max-width: 62ch; }
+
+.hero__bio p {
+  font-size: clamp(15.5px, 1.8vw, 17px);
   color: var(--text-muted);
-  max-width: 60ch;
-  margin: 0 0 24px;
+  margin: 0 0 14px;
+}
+
+/* The first line is the positioning statement, so it carries more weight. */
+.hero__bio p:first-child {
+  font-size: clamp(16px, 2vw, 18px);
+  color: var(--text);
+}
+
+.hero__meta {
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin: 18px 0 24px;
+}
+
+.hero__meta em {
+  font-style: normal;
+  color: var(--text);
+  border-bottom: 1px dashed var(--border);
+}
+
+.hero__bio em {
+  font-style: normal;
+  color: var(--text);
+  border-bottom: 1px dashed var(--border);
 }
 
 .hero__actions {
@@ -327,9 +363,6 @@ h1, h2, h3 { line-height: 1.25; letter-spacing: -0.02em; margin: 0; }
   margin: 0 0 40px;
 }
 
-.prose { max-width: 68ch; margin-top: 28px; }
-.prose p { margin: 0 0 16px; color: var(--text-muted); }
-.prose em { color: var(--text); font-style: normal; border-bottom: 1px dashed var(--border); }
 
 /* ==========================================================================
    Grid and cards
@@ -394,79 +427,80 @@ h1, h2, h3 { line-height: 1.25; letter-spacing: -0.02em; margin: 0; }
 }
 
 .case {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  overflow: hidden;
-  transition: border-color .15s ease, box-shadow .2s ease;
+  transition: border-color .15s ease, box-shadow .2s ease, transform .15s ease;
 }
 
-.case:hover { border-color: color-mix(in srgb, var(--accent) 35%, var(--border)); }
-.case.is-open {
+.case:hover {
   border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+.case.is-open {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--border));
   box-shadow: var(--shadow-lg);
+  transform: none;
   /* An expanded card spans the full row so the write-up has room to breathe. */
   grid-column: 1 / -1;
 }
 
-.case__toggle {
-  display: block;
-  width: 100%;
-  text-align: left;
-  padding: 24px;
-  border: 0;
-  background: none;
-  font: inherit;
-  color: inherit;
-  cursor: pointer;
-}
-
-.case__head {
+/* The header is the click target. It grows to fill the card so the action row
+   sits flush at the bottom of every card, however short its summary is. */
+.case__header {
+  position: relative;
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  padding: 24px;
 }
 
 .case__num {
   font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--accent);
-}
-
-/* The whole card is the button, so this chevron is the only visual cue that it
-   opens. Keep it big enough to read as an affordance. */
-.case__arrow {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: var(--bg-alt);
-  color: var(--text-muted);
-  font-size: 15px;
-  line-height: 1;
-  transition: transform .2s ease, background-color .15s ease, color .15s ease;
-  flex-shrink: 0;
-}
-
-.case:hover .case__arrow {
-  background: var(--accent-soft);
+  font-size: 12px;
+  font-weight: 500;
   color: var(--accent-text);
-}
-
-.case.is-open .case__arrow {
-  transform: rotate(180deg);
   background: var(--accent-soft);
-  color: var(--accent-text);
+  padding: 3px 9px;
+  border-radius: 999px;
+  margin-bottom: 14px;
 }
 
 .case__title {
   font-size: 18px;
   font-weight: 600;
-  margin-bottom: 8px;
+  margin: 0 0 8px;
+}
+
+/* Only the title is inside the <button>; the ::after below stretches the hit
+   area over the whole header, so the entire card responds to a click. */
+.case__toggle {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.case__toggle::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+}
+
+.case__toggle:focus-visible { outline: none; }
+.case__toggle:focus-visible::after {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 .case__summary {
@@ -487,10 +521,52 @@ h1, h2, h3 { line-height: 1.25; letter-spacing: -0.02em; margin: 0; }
   margin-bottom: 16px;
 }
 
+/* The affordance: a labelled action row, so nobody has to guess that the card
+   opens. Pushed to the bottom of the header by the auto margin. */
+.case__action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent-text);
+}
+
+.case__action-text { transition: opacity .15s ease; }
+
+.case__arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent-text);
+  transition: transform .2s ease, background-color .15s ease, color .15s ease;
+  flex-shrink: 0;
+}
+
+.case__arrow svg { display: block; }
+
+.case:hover .case__arrow {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.case.is-open .case__arrow {
+  transform: rotate(180deg);
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
 .case__body {
   padding: 0 24px 24px;
-  border-top: 1px solid var(--border);
-  margin-top: -4px;
 }
 
 .case__body[hidden] { display: none; }
