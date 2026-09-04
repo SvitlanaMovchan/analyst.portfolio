@@ -116,28 +116,33 @@ const CASES = [
 
   {
     id: "04",
-    title: "Marketing channel unit economics",
-    summary: "Which acquisition channels pay for themselves, and how long they take to.",
-    stack: ["SQL", "BigQuery", "Excel"],
-    metric: "Payback 4.2 months",
+    title: "Partner Traffic Anti-Fraud – TENTENS Case",
+    summary: "Which ad networks are actually running fraud, and which just look suspicious?",
+    stack: ["SQL", "Tableau"],
+    metric: "2 of 14 networks flagged as fraud",
     context:
-      "Spend and revenue data across several paid and organic acquisition channels. " +
-      "Channels were being compared on cost per install alone, which flattered the cheap " +
-      "ones and hid what they were actually worth.",
+      "TENTENS Tech runs 14 partner ad networks driving app signups. Some had unusual " +
+      "metrics, but unusual isn't automatically fraud — needed a systematic check to tell " +
+      "real fraud from just a different price segment.",
     task:
-      "Calculate CAC, LTV and payback period per channel, and say which channels deserve " +
-      "more budget and which should be cut.",
+      "Find which networks are actually running fraud, back each finding with at least two " +
+      "independent metrics, classify the fraud type, and propose an ongoing monitoring " +
+      "metric plus a dashboard.",
     approach:
-      "Joined spend data to user revenue by channel and signup month in SQL. Built LTV " +
-      "curves per cohort rather than assuming a flat average, so channels with slow-burning " +
-      "revenue weren't penalised. Calculated CAC per channel and the month at which " +
-      "cumulative revenue crossed it.",
+      "Built a baseline metrics table (CPA, ROAS, chargeback rate) across all 14 networks in " +
+      "SQL, then checked every outlier individually instead of trusting headline numbers. " +
+      "Cleared four false positives — one was a premium segment, three had a real data gap " +
+      "(activity log missing for two months), not dead traffic. Tested and rejected three " +
+      "other fraud hypotheses before settling on chargeback rate as the signal that actually " +
+      "caught both real cases.",
     result:
-      "The cheapest channel by CAC had the worst payback – its users converted rarely and " +
-      "spent little. Recommended shifting budget to a channel that looked expensive per " +
-      "install but paid back in four months.",
+      "Confirmed carding fraud on two networks: one lossmaking in every country (14.98% " +
+      "chargebacks vs a 0.45% baseline), one profitable but localised to the US. Four other " +
+      "suspicious networks turned out clean. Recommended a weekly chargeback-rate alert by " +
+      "network and country at 3x baseline, and built a Tableau dashboard for the team to " +
+      "monitor it.",
     image: null,
-    docUrl: null
+    docUrl: "https://app.notion.com/p/Genesis-Analytics-Camp-3-0-3a73f9d9c1b28035900ad36c36be7e49"
   }
 
 ];
