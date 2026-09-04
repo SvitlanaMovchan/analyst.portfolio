@@ -138,31 +138,6 @@ const CASES = [
       "install but paid back in four months.",
     image: null,
     docUrl: null
-  },
-
-  {
-    id: "05",
-    title: "RFM customer segmentation",
-    summary: "Splitting the customer base into groups worth treating differently.",
-    stack: ["SQL", "Python", "Power BI"],
-    metric: "18% of users, 61% of revenue",
-    context:
-      "A transactional dataset with no segmentation in place – every customer received the " +
-      "same messaging regardless of how much or how recently they had bought.",
-    task:
-      "Build an RFM segmentation, size each segment, and identify which ones are worth " +
-      "targeting first.",
-    approach:
-      "Scored recency, frequency and monetary value in SQL, using quintiles rather than " +
-      "fixed thresholds so the segments stayed balanced. Grouped the scores into named " +
-      "segments in Python, then built a Power BI view showing segment size against revenue " +
-      "share and how customers moved between segments over time.",
-    result:
-      "A champions segment of 18% of customers drove 61% of revenue, while a large " +
-      "at-risk group had bought recently enough to be worth a win-back campaign. Gave " +
-      "marketing a concrete first target instead of the whole base.",
-    image: null,
-    docUrl: null
   }
 
 ];
