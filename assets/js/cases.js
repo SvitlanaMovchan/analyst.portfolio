@@ -57,9 +57,9 @@ const CASES = [
 
   {
     id: "02",
-    title: "Creative Testing Framework",
+    title: "Marketing Analytics – OBRIO Case",
     summary: "How much ad-spend data do you actually need before trusting a Stop or Scale call?",
-    stack: ["SQL"],
+    stack: ["SQL", "Python"],
     metric: "$26K saved (backtest)",
     context:
       "A subscription product company runs constant ad-creative tests, but each marketer " +
