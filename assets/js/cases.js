@@ -141,7 +141,7 @@ const CASES = [
       "suspicious networks turned out clean. Recommended a weekly chargeback-rate alert by " +
       "network and country at 3x baseline, and built a Tableau dashboard for the team to " +
       "monitor it.",
-    image: null,
+    image: "assets/img/cases/04-tentens-dashboard.png",
     docUrl: "https://app.notion.com/p/Genesis-Analytics-Camp-3-0-3a73f9d9c1b28035900ad36c36be7e49"
   }
 
