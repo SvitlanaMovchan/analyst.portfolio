@@ -86,27 +86,32 @@ const CASES = [
 
   {
     id: "03",
-    title: "Sales funnel diagnostics",
-    summary: "Where users abandon the purchase flow, and what that costs per month.",
-    stack: ["SQL", "Excel", "Power BI"],
-    metric: "41% drop at payment step",
+    title: "Traffic Distribution System – appflame Case",
+    summary: "Which ad offer should a click see, and how do you rank offers before you know if they'll pay?",
+    stack: ["SQL"],
+    metric: "97% revenue from 78% of clicks",
     context:
-      "An e-commerce funnel with five steps from product page to order confirmation. " +
-      "Overall conversion was falling but nobody could say which step was responsible.",
+      "appflame needed a way to pick which ad offer to show on each click, but there was no " +
+      "documented ranking logic, and brand-new offers with zero history had no fair way to " +
+      "compete for traffic.",
     task:
-      "Quantify the drop-off at each step, find the biggest leak, and size the revenue " +
-      "impact so the team could prioritise against other work.",
+      "Design an offer-ranking algorithm: define the core metric, decide how to segment it " +
+      "reliably, handle offers with too little data, and validate the design against how the " +
+      "live system actually behaves.",
     approach:
-      "Reconstructed the funnel from event data in SQL, handling users who skipped or " +
-      "repeated steps. Built a Power BI dashboard with step-by-step conversion filterable " +
-      "by device, traffic source and new-vs-returning. Multiplied the recoverable drop-off " +
-      "by average order value to estimate monthly revenue at stake.",
+      "Defined RPC (Net Revenue / Clicks) as the ranking metric, computed at the most granular " +
+      "reliable level — offer+geo+source, falling back to offer+geo, then offer, then a " +
+      "payout-type average as volume drops below 50 clicks. Cleaned 21K duplicate rows first, " +
+      "then validated by picking a real click and checking where the algorithm would have " +
+      "ranked the offer actually shown.",
     result:
-      "The payment step lost 41% of users, concentrated on mobile. Sizing the leak turned " +
-      "an abstract 'conversion is down' conversation into a specific number, which moved " +
-      "the fix up the roadmap.",
+      "Priority offers take 78% of clicks but 97% of revenue, while Backfill eats 22% of " +
+      "clicks for just 3% — and Mexico's entire 34K clicks fell into Backfill, a clear " +
+      "coverage gap. On a real test click, the algorithm ranked the actual offer shown 4th of " +
+      "68 candidates, a good match. Proposed a cold-start rule for brand-new offers and five " +
+      "monitoring alerts to catch anomalies after launch.",
     image: null,
-    docUrl: null
+    docUrl: "https://app.notion.com/p/TDS-case-appflame-2026-3b73f9d9c1b2807f8506f3e008998443"
   },
 
   {
