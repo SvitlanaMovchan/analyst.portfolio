@@ -57,7 +57,9 @@ Live: **https://svitlanamovchan.github.io/analyst.portfolio/**
 | `assets/img/photo.jpg` | фото в шапці (квадратне, від 400×400) — потім заміни `src` у `index.html` з `photo-placeholder.svg` на `photo.jpg` |
 | `assets/img/cases/01.png` | скріншоти дашбордів, шлях прописується в `cases.js` у полі `image` |
 | `assets/img/certs/genesis.pdf` | сертифікат Genesis |
-| `assets/img/certs/danit.pdf` | сертифікат DAN.IT |
+
+Сертифікат DAN.IT не хоститься локально — посилання в Education веде напряму на
+живу сторінку `certificates.dan-it.com.ua/certificates/data-analytics/svitlana-movchan`.
 
 Обкладинка `assets/img/og-cover.png` (прев'ю для LinkedIn) уже згенерована.
 Перегенерувати після зміни імені: `python3 assets/img/make-og-cover.py` (потрібен Pillow).
