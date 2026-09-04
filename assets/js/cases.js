@@ -46,7 +46,7 @@ const CASES = [
       "so their short observation window wouldn't drag the average down.",
     result:
       "Paid-social cohorts lost most users within the first week, while organic cohorts " +
-      "stabilised after D7. The steepest drop happened before users completed onboarding — " +
+      "stabilised after D7. The steepest drop happened before users completed onboarding – " +
       "pointing to activation, not product value, as the problem to fix first.",
     image: null,
     docUrl: null
@@ -122,7 +122,7 @@ const CASES = [
       "revenue weren't penalised. Calculated CAC per channel and the month at which " +
       "cumulative revenue crossed it.",
     result:
-      "The cheapest channel by CAC had the worst payback — its users converted rarely and " +
+      "The cheapest channel by CAC had the worst payback – its users converted rarely and " +
       "spent little. Recommended shifting budget to a channel that looked expensive per " +
       "install but paid back in four months.",
     image: null,
@@ -136,7 +136,7 @@ const CASES = [
     stack: ["SQL", "Python", "Power BI"],
     metric: "18% of users, 61% of revenue",
     context:
-      "A transactional dataset with no segmentation in place — every customer received the " +
+      "A transactional dataset with no segmentation in place – every customer received the " +
       "same messaging regardless of how much or how recently they had bought.",
     task:
       "Build an RFM segmentation, size each segment, and identify which ones are worth " +
