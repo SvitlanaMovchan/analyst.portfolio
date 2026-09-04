@@ -28,39 +28,29 @@ const CASES = [
 
   {
     id: "01",
-    title: "Subscription price A/B test",
+    title: "Subscription price A/B test – AMO Case",
     summary: "Was the $6.99 to $9.99 price hike actually the win the first test said it was?",
     stack: ["Python", "pandas", "Statsmodels"],
     metric: "-$73,994 revenue impact",
     context:
-      "A subscription fitness app with a quiz-funnel onboarding on web and no free tier. " +
-      "Six months earlier the company had raised the weekly price from $6.99 to $9.99 based " +
-      "on a test that reportedly showed no change in purchase conversion, but actual revenue " +
-      "never showed the expected lift and the CEO asked for the original test to be re-checked.",
+      "A subscription fitness app with quiz-funnel onboarding and no free tier. Six months " +
+      "earlier the price rose from $6.99 to $9.99 after a test reportedly showed no drop in " +
+      "conversion — but revenue never followed, so the CEO asked for the test to be re-checked.",
     task:
-      "Determine whether the original 'no conversion change' conclusion was correct, quantify " +
-      "the real effect of the price change on purchase and upsell conversion by segment, " +
-      "calculate 1.5-month LTV per price group including refunds, chargebacks and OTP upsells, " +
-      "and give a pricing recommendation backed by ROAS.",
+      "Check whether that conclusion was right, quantify the real conversion impact, calculate " +
+      "1.5-month LTV per price group including refunds and upsells, and give a pricing " +
+      "recommendation backed by ROAS.",
     approach:
-      "Before trusting the original result, audited the raw event data: removed duplicate " +
-      "click rows, found a day where 100% of traffic had been misrouted to control, and " +
-      "caught the critical issue — Tier-1 users in the test group had never actually been " +
-      "charged $9.99, so that segment had no real experiment at all. After excluding two more " +
-      "days lost to a payment outage, ran a two-proportion z-test with Wilson confidence " +
-      "intervals on the cleaned data. For LTV, projected immature cohorts to 7 weekly charges " +
-      "with chain-ladder retention factors, validated the projection against cohorts that had " +
-      "already matured, then layered in refund/chargeback loss rates and OTP upsell revenue " +
-      "before comparing revenue and ROAS by channel, region and price group.",
+      "Audited the raw data first: found duplicate rows, a misrouted traffic day, and the " +
+      "critical bug — Tier-1 test users were never actually charged $9.99. After excluding a " +
+      "payment-outage day too, ran a z-test on the clean data. For LTV, projected immature " +
+      "cohorts with chain-ladder retention factors, validated against matured ones, then " +
+      "layered in refunds and OTP upsells.",
     result:
-      "The original conclusion was wrong: conversion actually fell 8.96% (6.66% to 6.06%, " +
-      "p = 0.0003), and upsell conversion fell even harder (22.07% to 17.19%). Per-user LTV " +
-      "did rise with the higher price, but only 5.2% — not the 42% the price jump implied — " +
-      "because worse retention, more refunds and fewer upsells ate most of the gain. Across " +
-      "the full period the conversion loss outweighed that per-user gain: total revenue fell " +
-      "$73,994 (-3.8%), and ROAS improved only marginally overall (+2%) while declining in " +
-      "the EU. Recommended reverting to $6.99 and testing a smaller increase, such as $7.99, " +
-      "instead of the full jump to $9.99.",
+      "Conversion actually fell 8.96% (p = 0.0003), not flat as first reported. Per-user LTV " +
+      "rose only 5.2%, not the 42% implied — so the conversion loss won out: revenue fell " +
+      "$73,994, and ROAS barely moved. Recommended reverting to $6.99 and testing a smaller " +
+      "increase instead.",
     image: null,
     docUrl: "https://app.notion.com/p/Genesis-Analytics-Camp-3-0-3a33f9d9c1b280d898ccc4fb00260c9e"
   },
