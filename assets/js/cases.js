@@ -81,7 +81,7 @@ const CASES = [
       "unprofitable there. Backtested against real data and proposed Scale Precision, False " +
       "Stop Rate and Saved Spend to track it going forward.",
     image: null,
-    docUrl: "https://app.notion.com/p/Case-Marketing-Analytics-3ad3f9d9c1b2807d9302dffc42d25a65"
+    docUrl: "https://www.canva.com/design/DAHRK4VJLnY/xHx8LrMkhwHNe9fx2lWQVw/view"
   },
 
   {
