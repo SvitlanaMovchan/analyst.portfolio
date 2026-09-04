@@ -57,28 +57,31 @@ const CASES = [
 
   {
     id: "02",
-    title: "A/B test evaluation",
-    summary: "Was the checkout redesign a real improvement, or noise in the data?",
-    stack: ["Python", "pandas", "Matplotlib"],
-    metric: "+3.4pp conversion, p = 0.02",
+    title: "Creative Testing Framework",
+    summary: "How much ad-spend data do you actually need before trusting a Stop or Scale call?",
+    stack: ["SQL"],
+    metric: "$26K saved (backtest)",
     context:
-      "A two-week experiment on a redesigned checkout page, split evenly between control " +
-      "and variant. The team wanted to ship based on the raw conversion difference alone.",
+      "A subscription product company runs constant ad-creative tests, but each marketer " +
+      "judged results their own way — some killed creatives on too little data, others waited " +
+      "too long and burned budget on obvious losers. Leadership asked for one shared framework.",
     task:
-      "Determine whether the observed lift was statistically significant, check the test " +
-      "was set up soundly, and give a clear ship / don't-ship recommendation.",
+      "Design a Stop / Continue / Scale framework: find the minimum data needed before any " +
+      "decision is safe, define clear thresholds for obviously good or bad creatives, and " +
+      "propose how to measure whether the framework actually works.",
     approach:
-      "Validated the split ratio and checked for sample-ratio mismatch before touching the " +
-      "results. Ran a two-proportion z-test on conversion, computed the confidence interval " +
-      "for the lift, and did a power calculation to confirm the sample was large enough to " +
-      "detect the effect size the team cared about. Segmented by device to check the effect " +
-      "wasn't driven by one platform.",
+      "Analyzed 70K creatives in SQL. Found 75% never get a single conversion, so early ROMI " +
+      "is meaningless — tested CTR as an early proxy and found no correlation with final ROMI " +
+      "(r = 0.003). Tracked how often a creative's status flipped as spend grew to find where " +
+      "ROMI stabilises, and how many future winners each stop threshold would kill by mistake.",
     result:
-      "The lift held up at the 5% level and was consistent across desktop and mobile. " +
-      "Recommended shipping, with a note that the confidence interval was wide enough that " +
-      "the true effect could be roughly half the observed one.",
+      "Set Stop at 200 clicks or 8,000 impressions with zero conversions (~5-7% error, reaching " +
+      "under 1% of creatives), and Scale at $300+ spend with ROMI ≥ 30% (77% stayed profitable). " +
+      "Below $300 spend ROMI is unreliable — up to 68% of eventual winners still look " +
+      "unprofitable there. Backtested against real data and proposed Scale Precision, False " +
+      "Stop Rate and Saved Spend to track it going forward.",
     image: null,
-    docUrl: null
+    docUrl: "https://app.notion.com/p/Case-Marketing-Analytics-3ad3f9d9c1b2807d9302dffc42d25a65"
   },
 
   {
